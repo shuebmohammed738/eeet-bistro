@@ -896,7 +896,7 @@ footer {
 .page-hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(20, 8, 2, 0.62);
+    background: rgba(20, 8, 2, 0);
 }
 
 .page-hero-content {
