@@ -59,28 +59,28 @@
     <script>
         const menus = {
             starters: [
-                { name: 'Smoked beet & goat curd', desc: 'Beetroot three ways, aged goat cheese, walnut crumble', price: 'KSh 950', tag: "Chef's pick", img: '/../images/smoked-beet-goat-curd.jpg' },
-                { name: 'Bone broth dumplings', desc: 'House-made skins, ginger, chive oil, ponzu', price: 'KSh 850', img: '/../images/bone-broth-dumplings.jpg' },
-                { name: 'Burrata with heritage tomatoes', desc: 'Heirloom varieties, basil oil, sea salt, grilled sourdough', price: 'KSh 1,100', tag: 'Seasonal', img: '/../images/burrata-heritage-tomatoes.jpg' },
-                { name: 'Crispy chicken skin', desc: 'House kimchi, spring onion cream, toasted sesame', price: 'KSh 700', img: '/../images/crispy-chicken-skin.jpg' },
+                { name: 'Smoked beet & goat curd', desc: 'Beetroot three ways, aged goat cheese, walnut crumble', price: 'KSh 950', tag: "Chef's pick", img: 'images/smoked-beet-goat-curd.jpg' },
+                { name: 'Bone broth dumplings', desc: 'House-made skins, ginger, chive oil, ponzu', price: 'KSh 850', img: 'images/bone-broth-dumplings.jpg' },
+                { name: 'Burrata with heritage tomatoes', desc: 'Heirloom varieties, basil oil, sea salt, grilled sourdough', price: 'KSh 1,100', tag: 'Seasonal', img: 'images/burrata-heritage-tomatoes.jpg' },
+                { name: 'Crispy chicken skin', desc: 'House kimchi, spring onion cream, toasted sesame', price: 'KSh 700', img: 'images/crispy-chicken-skin.jpg' },
             ],
             mains: [
-                { name: 'Slow lamb shoulder', desc: '12-hour braise, preserved lemon gremolata, smashed roots', price: 'KSh 2,400', tag: 'Signature', img: '/../images/slow-lamb-shoulder.jpg' },
-                { name: 'Mushroom risotto', desc: 'Porcini, oyster & shiitake, burnt butter, aged pecorino', price: 'KSh 1,650', tag: 'Veg', img: '/../images/mushroom-risotto.jpg' },
-                { name: 'Pan-seared sea bass', desc: 'Fennel velouté, caperberries, crisp skin, herb oil', price: 'KSh 2,200', img: '/../images/pan-seared-sea-bass.jpg' },
-                { name: 'Eeet burger', desc: 'Dry-aged beef, caramelised onion jam, gruyère, house pickles', price: 'KSh 1,500', img: '/../images/eeet-burger.jpg' },
+                { name: 'Slow lamb shoulder', desc: '12-hour braise, preserved lemon gremolata, smashed roots', price: 'KSh 2,400', tag: 'Signature', img: 'images/slow-lamb-shoulder.jpg' },
+                { name: 'Mushroom risotto', desc: 'Porcini, oyster & shiitake, burnt butter, aged pecorino', price: 'KSh 1,650', tag: 'Veg', img: 'images/mushroom-risotto.jpg' },
+                { name: 'Pan-seared sea bass', desc: 'Fennel velouté, caperberries, crisp skin, herb oil', price: 'KSh 2,200', img: 'images/pan-seared-sea-bass.jpg' },
+                { name: 'Eeet burger', desc: 'Dry-aged beef, caramelised onion jam, gruyère, house pickles', price: 'KSh 1,500', img: 'images/eeet-burger.jpg' },
             ],
             desserts: [
-                { name: 'Dark chocolate & miso tart', desc: 'Salted caramel, cocoa nib crumble, oat cream', price: 'KSh 750', tag: 'Award-winning', img: '/../images/dark-chocolate-miso-tart.jpg' },
-                { name: 'Passionfruit pavlova', desc: 'Toasted meringue, passionfruit curd, fresh mint', price: 'KSh 680', img: '/../images/passionfruit-pavlova.jpg' },
-                { name: 'Ricotta fritters', desc: 'Warm, dusted with cinnamon sugar, vanilla bean dip', price: 'KSh 600', img: '/../images/ricotta-fritters.jpg' },
-                { name: 'Cheese board', desc: 'Selection of three, honeycomb, quince, crackers', price: 'KSh 1,200', img: '/../images/cheese-board.jpg' },
+                { name: 'Dark chocolate & miso tart', desc: 'Salted caramel, cocoa nib crumble, oat cream', price: 'KSh 750', tag: 'Award-winning', img: 'images/dark-chocolate-miso-tart.jpg' },
+                { name: 'Passionfruit pavlova', desc: 'Toasted meringue, passionfruit curd, fresh mint', price: 'KSh 680', img: 'images/passionfruit-pavlova.jpg' },
+                { name: 'Ricotta fritters', desc: 'Warm, dusted with cinnamon sugar, vanilla bean dip', price: 'KSh 600', img: 'images/ricotta-fritters.jpg' },
+                { name: 'Cheese board', desc: 'Selection of three, honeycomb, quince, crackers', price: 'KSh 1,200', img: 'images/cheese-board.jpg' },
             ],
             drinks: [
-                { name: 'Hibiscus agua fresca', desc: 'Dried hibiscus, lime, ginger, soda', price: 'KSh 350', tag: "House fave", img: '/../images/hibiscus-agua-fresca.jpg' },
-                { name: 'Masala chai latte', desc: 'House spice blend, whole milk, jaggery', price: 'KSh 320', img: '/../images/masala-chai-latte.jpg' },
-                { name: 'Natural wine list', desc: 'Rotating selection of biodynamic wines by glass or bottle', price: 'From KSh 900', img: '/../images/natural-wine.jpg' },
-                { name: 'Cold-brew espresso tonic', desc: 'Single origin cold brew, Fever-Tree tonic, orange peel', price: 'KSh 480', img: '/../images/cold-brew-espresso-tonic.jpg' },
+                { name: 'Hibiscus agua fresca', desc: 'Dried hibiscus, lime, ginger, soda', price: 'KSh 350', tag: "House fave", img: 'images/hibiscus-agua-fresca.jpg' },
+                { name: 'Masala chai latte', desc: 'House spice blend, whole milk, jaggery', price: 'KSh 320', img: 'images/masala-chai-latte.jpg' },
+                { name: 'Natural wine list', desc: 'Rotating selection of biodynamic wines by glass or bottle', price: 'From KSh 900', img: 'images/natural-wine.jpg' },
+                { name: 'Cold-brew espresso tonic', desc: 'Single origin cold brew, Fever-Tree tonic, orange peel', price: 'KSh 480', img: 'images/cold-brew-espresso-tonic.jpg' },
             ]
         };
 
