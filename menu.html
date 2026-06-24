@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu — Eeet Bistro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+    <link rel="stylesheet" href="/../style.css">
+</head>
+
+<body>
+
+    <nav class="nav">
+        <a href="/../index.html" class="nav-logo">E<span>eet</span></a>
+        <ul class="nav-links">
+            <li><a href="menu.html" class="nav-active">Menu</a></li>
+            <li><a href="story.html">Story</a></li>
+            <li><a href="ambience.html">Ambience</a></li>
+            <li><a href="find-us.html">Find us</a></li>
+        </ul>
+        <a href="reserve.html" class="nav-cta">Reserve a table</a>
+    </nav>
+
+    <div class="page-hero">
+        <p class="eyebrow">The menu</p>
+        <h1 class="page-hero-title">Good things,<br><em>carefully made.</em></h1>
+        <p class="page-hero-sub">Every dish is seasonal, sourced close to home, and made with hands that care.</p>
+    </div>
+
+    <section class="section menu-section">
+        <div class="menu-tabs">
+            <button class="menu-tab active" onclick="setTab(this,'starters')">Starters</button>
+            <button class="menu-tab" onclick="setTab(this,'mains')">Mains</button>
+            <button class="menu-tab" onclick="setTab(this,'desserts')">Desserts</button>
+            <button class="menu-tab" onclick="setTab(this,'drinks')">Drinks</button>
+        </div>
+        <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <footer>
+        <a href="index.html" class="footer-logo">Eeet</a>
+        <div class="footer-info">
+            12 Harvest Lane, Old Town<br>
+            Open Tue–Sun · 12pm – 10pm · +254 700 000 000
+        </div>
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+            <a href="find-us.html">Find us</a>
+        </div>
+    </footer>
+
+    <script>
+        const menus = {
+            starters: [
+                { name: 'Smoked beet & goat curd', desc: 'Beetroot three ways, aged goat cheese, walnut crumble', price: 'KSh 950', tag: "Chef's pick", img: '/../images/smoked-beet-goat-curd.jpg' },
+                { name: 'Bone broth dumplings', desc: 'House-made skins, ginger, chive oil, ponzu', price: 'KSh 850', img: '/../images/bone-broth-dumplings.jpg' },
+                { name: 'Burrata with heritage tomatoes', desc: 'Heirloom varieties, basil oil, sea salt, grilled sourdough', price: 'KSh 1,100', tag: 'Seasonal', img: '/../images/burrata-heritage-tomatoes.jpg' },
+                { name: 'Crispy chicken skin', desc: 'House kimchi, spring onion cream, toasted sesame', price: 'KSh 700', img: '/../images/crispy-chicken-skin.jpg' },
+            ],
+            mains: [
+                { name: 'Slow lamb shoulder', desc: '12-hour braise, preserved lemon gremolata, smashed roots', price: 'KSh 2,400', tag: 'Signature', img: '/../images/slow-lamb-shoulder.jpg' },
+                { name: 'Mushroom risotto', desc: 'Porcini, oyster & shiitake, burnt butter, aged pecorino', price: 'KSh 1,650', tag: 'Veg', img: '/../images/mushroom-risotto.jpg' },
+                { name: 'Pan-seared sea bass', desc: 'Fennel velouté, caperberries, crisp skin, herb oil', price: 'KSh 2,200', img: '/../images/pan-seared-sea-bass.jpg' },
+                { name: 'Eeet burger', desc: 'Dry-aged beef, caramelised onion jam, gruyère, house pickles', price: 'KSh 1,500', img: '/../images/eeet-burger.jpg' },
+            ],
+            desserts: [
+                { name: 'Dark chocolate & miso tart', desc: 'Salted caramel, cocoa nib crumble, oat cream', price: 'KSh 750', tag: 'Award-winning', img: '/../images/dark-chocolate-miso-tart.jpg' },
+                { name: 'Passionfruit pavlova', desc: 'Toasted meringue, passionfruit curd, fresh mint', price: 'KSh 680', img: '/../images/passionfruit-pavlova.jpg' },
+                { name: 'Ricotta fritters', desc: 'Warm, dusted with cinnamon sugar, vanilla bean dip', price: 'KSh 600', img: '/../images/ricotta-fritters.jpg' },
+                { name: 'Cheese board', desc: 'Selection of three, honeycomb, quince, crackers', price: 'KSh 1,200', img: '/../images/cheese-board.jpg' },
+            ],
+            drinks: [
+                { name: 'Hibiscus agua fresca', desc: 'Dried hibiscus, lime, ginger, soda', price: 'KSh 350', tag: "House fave", img: '/../images/hibiscus-agua-fresca.jpg' },
+                { name: 'Masala chai latte', desc: 'House spice blend, whole milk, jaggery', price: 'KSh 320', img: '/../images/masala-chai-latte.jpg' },
+                { name: 'Natural wine list', desc: 'Rotating selection of biodynamic wines by glass or bottle', price: 'From KSh 900', img: '/../images/natural-wine.jpg' },
+                { name: 'Cold-brew espresso tonic', desc: 'Single origin cold brew, Fever-Tree tonic, orange peel', price: 'KSh 480', img: '/../images/cold-brew-espresso-tonic.jpg' },
+            ]
+        };
+
+        function setTab(el, tab) {
+            document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            renderMenu(tab);
+        }
+
+        function renderMenu(tab) {
+            const grid = document.getElementById('menu-grid');
+            grid.innerHTML = menus[tab].map(item => `
+    <div class="menu-item">
+      <div class="menu-item-img">
+        ${item.img
+                    ? `<img src="${item.img}" alt="${item.name}" />`
+                    : `<div class="menu-item-img-placeholder"><i class="ti ti-photo"></i></div>`}
+      </div>
+      <div class="menu-item-body">
+        <div>
+          <div class="menu-item-name">${item.name}</div>
+          <div class="menu-item-desc">${item.desc}</div>
+          ${item.tag ? `<span class="menu-item-tag">${item.tag}</span>` : ''}
+        </div>
+        <div class="menu-price">${item.price}</div>
+      </div>
+    </div>
+  `).join('');
+        }
+
+        renderMenu('starters');
+    </script>
+    <a href="https://wa.me/254795434776" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+</body>
+
+</html>
